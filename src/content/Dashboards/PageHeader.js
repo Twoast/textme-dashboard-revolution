@@ -1,10 +1,8 @@
 import { Typography, Avatar, Grid, useTheme } from '@mui/material';
+import { useSession } from 'next-auth/react';
 
 function PageHeader() {
-  const user = {
-    name: 'Catherine Pike',
-    avatar: '/static/images/avatars/1.jpg'
-  };
+  const { data: session } = useSession();
   const theme = useTheme();
 
   return (
@@ -17,16 +15,17 @@ function PageHeader() {
             height: theme.spacing(8)
           }}
           variant="rounded"
-          alt={user.name}
-          src={user.avatar}
+          alt={session.user.name}
+          src={session.user.image}
         />
       </Grid>
       <Grid item>
         <Typography variant="h3" component="h3" gutterBottom>
-          Welcome, {user.name}!
+          Welcome, {session.user.name}!
         </Typography>
         <Typography variant="subtitle2">
-          Today is a good day to start trading crypto assets!
+          If you encounter any problem, please reach out to the{' '}
+          <a href="mailto:backend@go-text.me">Backend Team</a>
         </Typography>
       </Grid>
     </Grid>

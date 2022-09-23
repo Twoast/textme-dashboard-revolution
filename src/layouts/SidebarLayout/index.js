@@ -12,6 +12,7 @@ const SidebarLayout = ({ children }) => {
   const { data: session, status } = useSession();
   const router = useRouter();
 
+  console.log(session);
   switch (status) {
     case 'loading':
       return <Loader />;

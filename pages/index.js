@@ -1,5 +1,5 @@
 import { Container } from '@mui/material';
-import PageHeader from 'src/content/Dashboards/Crypto/PageHeader';
+import PageHeader from 'src/content/Dashboards/PageHeader';
 import PageTitleWrapper from 'src/components/PageTitleWrapper';
 import Head from 'next/head';
 import SidebarLayout from 'src/layouts/SidebarLayout';

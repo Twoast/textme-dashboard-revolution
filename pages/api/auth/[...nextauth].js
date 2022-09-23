@@ -16,12 +16,6 @@ export default NextAuth({
   },
   secret: 'secret token',
   callbacks: {
-    async jwt(token, account) {
-      if (account?.accessToken) {
-        token.accessToken = account.accessToken;
-      }
-      return token;
-    },
     redirect: async (url, _baseUrl) => {
       return Promise.resolve('/login');
     }

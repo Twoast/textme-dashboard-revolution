@@ -1,5 +1,14 @@
-import { Box, Container, Button, styled, Card } from '@mui/material';
+import {
+  Box,
+  Container,
+  Button,
+  styled,
+  Card,
+  Typography
+} from '@mui/material';
+import { pink } from '@mui/material/colors';
 
+import FavoriteIcon from '@mui/icons-material/Favorite';
 import BaseLayout from 'src/layouts/BaseLayout';
 import Head from 'next/head';
 import Logo from 'src/components/LogoSign';
@@ -49,10 +58,27 @@ function Login() {
                 }
                 variant="outlined"
                 startIcon={<GoogleIcon />}
+                size="large"
               >
                 Log-in using Google
               </Button>
             </Card>
+            <Container maxWidth="lg" sx={{ mt: 2 }}>
+              <Typography textAlign="center" variant="subtitle1">
+                <div
+                  style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    flexWrap: 'wrap',
+                    justifyContent: 'center'
+                  }}
+                >
+                  Made with &nbsp;
+                  <FavoriteIcon sx={{ color: pink[500] }} />
+                  &nbsp; by the tech team
+                </div>
+              </Typography>
+            </Container>
           </Container>
         </TopWrapper>
       </MainContent>
